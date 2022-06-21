@@ -1,4 +1,4 @@
-package com.demo.Model;
+package ma.portail.saham.model;
 
 public class Customer {
   private String firstName;

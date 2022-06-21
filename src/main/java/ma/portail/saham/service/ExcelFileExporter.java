@@ -1,6 +1,5 @@
-package com.demo.Service;
+package ma.portail.saham.service;
 
-import com.demo.Model.Customer;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -13,6 +12,8 @@ import org.apache.poi.ss.usermodel.IndexedColors;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
+
+import ma.portail.saham.model.Customer;
 
 public class ExcelFileExporter {
 

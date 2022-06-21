@@ -1,20 +1,17 @@
-package com.demo;
+package ma.portail.saham;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
-public class CdgApplication {
-
-  @Bean
-  public RestTemplate getRestTemplate() {
-    return new RestTemplate();
-  }
+@EnableFeignClients
+public class ApplicationMain {
 
   public static void main(String[] args) {
 
-    SpringApplication.run(CdgApplication.class, args);
+    SpringApplication.run(ApplicationMain.class, args);
   }
 }
