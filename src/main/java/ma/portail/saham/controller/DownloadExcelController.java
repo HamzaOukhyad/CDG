@@ -14,7 +14,7 @@ import ma.portail.saham.repository.CompteTitreRepository;
 @RestController
 public class DownloadExcelController {
 
-	@Autowired
+
 	private final CompteTitreRepository comptetitrerepository;
 
 	public DownloadExcelController(CompteTitreRepository comptetitrerepository) {
