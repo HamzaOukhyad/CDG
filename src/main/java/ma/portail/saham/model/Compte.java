@@ -1,18 +1,18 @@
 package ma.portail.saham.model;
 
-public class Clientdto {
+public class Compte {
 
 	  private String idClientTitre;
 	  private String numeroCompteEspeceAttache;
 	  private String intitule;
 	  
-	public Clientdto(String idClientTitre, String numeroCompteEspeceAttache, String intitule) {
+	public Compte(String idClientTitre, String numeroCompteEspeceAttache, String intitule) {
 		super();
 		this.idClientTitre = idClientTitre;
 		this.numeroCompteEspeceAttache = numeroCompteEspeceAttache;
 		this.intitule = intitule;
 	}
-	public Clientdto() {
+	public Compte() {
 		super();
 	}
 	public String getIdClientTitre() {

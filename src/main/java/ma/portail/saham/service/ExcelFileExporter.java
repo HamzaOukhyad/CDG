@@ -13,11 +13,11 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 
-import ma.portail.saham.model.Customer;
+
 
 public class ExcelFileExporter {
 
-  public static ByteArrayInputStream contactListToExcelFile(List<Customer> customers) {
+ /* public static ByteArrayInputStream contactListToExcelFile(List<Customer> customers) {
     try (Workbook workbook = new HSSFWorkbook()) {
       Sheet sheet = workbook.createSheet("Customers");
 
@@ -65,4 +65,5 @@ public class ExcelFileExporter {
       return null;
     }
   }
+  */
 }

@@ -2,7 +2,7 @@ package ma.portail.saham.model;
 
 import java.io.Serializable;
 
-public class Client implements Serializable {
+public class Position implements Serializable {
 
   private String numeroCompte;
   private String codeIsin;
@@ -34,10 +34,10 @@ public int getQuantite() {
 public void setQuantite(int quantite) {
 	this.quantite = quantite;
 }
-public Client() {
+public Position() {
 	super();
 }
-public Client(String numeroCompte, String codeIsin, String descriptionTitre, int quantite) {
+public Position(String numeroCompte, String codeIsin, String descriptionTitre, int quantite) {
 	super();
 	this.numeroCompte = numeroCompte;
 	this.codeIsin = codeIsin;
