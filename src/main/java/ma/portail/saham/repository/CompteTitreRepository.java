@@ -21,7 +21,7 @@ public interface CompteTitreRepository {
 
 	    @RequestMapping(method = RequestMethod.GET, value = "/api/v1/comptes/titres/{numeroCompte}", produces = "application/json")
 
-	    List<Compte> getCompteTitre(@RequestParam("numeroCompte") String numeroCompte);
+	    Compte getCompteTitre(@RequestParam("numeroCompte") String numeroCompte);
 	    
 	  
 

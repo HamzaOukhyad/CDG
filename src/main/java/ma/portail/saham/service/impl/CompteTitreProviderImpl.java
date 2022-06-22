@@ -27,7 +27,7 @@ public class CompteTitreProviderImpl implements CompteTitreProvider {
 	}
 
 	@Override
-    public List<Compte> getCompteTitre(String numeroCompte){
+    public Compte getCompteTitre(String numeroCompte){
 		
 		return comptetitrerepository.getCompteTitre(numeroCompte);
 	}

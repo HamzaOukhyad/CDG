@@ -5,13 +5,24 @@ public class Compte {
 	  private String idClientTitre;
 	  private String numeroCompteEspeceAttache;
 	  private String intitule;
+	  private String numeroCompte;
 	  
-	public Compte(String idClientTitre, String numeroCompteEspeceAttache, String intitule) {
+	public Compte(String idClientTitre, String numeroCompteEspeceAttache, String intitule,String numeroCompte) {
 		super();
 		this.idClientTitre = idClientTitre;
 		this.numeroCompteEspeceAttache = numeroCompteEspeceAttache;
 		this.intitule = intitule;
+		this.numeroCompte=numeroCompte;
 	}
+	
+	public String getNumeroCompte() {
+		return numeroCompte;
+	}
+
+	public void setNumeroCompte(String numeroCompte) {
+		this.numeroCompte = numeroCompte;
+	}
+
 	public Compte() {
 		super();
 	}
