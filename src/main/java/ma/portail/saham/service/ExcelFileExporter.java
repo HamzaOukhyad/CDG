@@ -1,6 +1,5 @@
-package com.demo.Service;
+package ma.portail.saham.service;
 
-import com.demo.Model.Customer;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -14,9 +13,11 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 
+
+
 public class ExcelFileExporter {
 
-  public static ByteArrayInputStream contactListToExcelFile(List<Customer> customers) {
+ /* public static ByteArrayInputStream contactListToExcelFile(List<Customer> customers) {
     try (Workbook workbook = new HSSFWorkbook()) {
       Sheet sheet = workbook.createSheet("Customers");
 
@@ -64,4 +65,5 @@ public class ExcelFileExporter {
       return null;
     }
   }
+  */
 }
