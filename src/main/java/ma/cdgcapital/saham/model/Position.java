@@ -8,8 +8,8 @@ import lombok.Data;
 @AllArgsConstructor
 public class Position implements Serializable {
 
-  private String numeroCompte;
-  private String codeIsin;
-  private String descriptionTitre;
-  private int quantite;
+    private String numeroCompte;
+    private String codeIsin;
+    private String descriptionTitre;
+    private int quantite;
 }
