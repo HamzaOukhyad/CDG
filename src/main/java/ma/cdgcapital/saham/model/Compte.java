@@ -7,8 +7,8 @@ import lombok.Data;
 @AllArgsConstructor
 public class Compte {
 
-    private String idClientTitre;
-    private String numeroCompteEspeceAttache;
-    private String intitule;
-    private String numeroCompte;
+  private String idClientTitre;
+  private String numeroCompteEspeceAttache;
+  private String intitule;
+  private String numeroCompte;
 }
