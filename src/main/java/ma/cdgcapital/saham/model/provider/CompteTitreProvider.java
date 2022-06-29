@@ -10,6 +10,4 @@ public interface CompteTitreProvider {
   List<Position> getPositions(String numeroCompte);
 
   Compte getCompteTitre(String numeroCompte);
- 
-  Operation getReleveChronologiques(String numeroCompte);
 }
