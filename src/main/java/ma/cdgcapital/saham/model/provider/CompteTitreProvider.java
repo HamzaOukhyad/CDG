@@ -2,7 +2,6 @@ package ma.cdgcapital.saham.model.provider;
 
 import java.util.List;
 import ma.cdgcapital.saham.model.Compte;
-import ma.cdgcapital.saham.model.Operation;
 import ma.cdgcapital.saham.model.Position;
 
 public interface CompteTitreProvider {
