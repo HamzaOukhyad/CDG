@@ -9,4 +9,5 @@ public class XlsColumn {
 
   private String name;
   private int mergedNumber;
+  
 }
