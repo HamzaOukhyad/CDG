@@ -39,23 +39,23 @@ public class ExcelFileExporter {
           new XlsColumn("Code valeur", 1),
           new XlsColumn("Désignation valeur", 1),
           new XlsColumn("Quantité", 1),
-          new XlsColumn("Prix unitaire", 2),
+          new XlsColumn("Prix unitaire", 1),
           new XlsColumn("Montant Brut", 1),
-          new XlsColumn("Montant Net", 3));
+          new XlsColumn("Montant Net", 1));
 
   private static final List<XlsColumn> positionColumns =
       Arrays.asList(
-          new XlsColumn("DATE EXTRATION", 1),
-          new XlsColumn("ID CLIENT", 1),
-          new XlsColumn("CLIENT LIBELLE", 1),
-          new XlsColumn("COMPTE TITRE", 1),
-          new XlsColumn("COMPTES ESPECES", 1),
-          new XlsColumn("CODE ISIN", 1),
-          new XlsColumn("ISIN DESCRIPTION", 1),
+          new XlsColumn("DATEEXTRATION", 1),
+          new XlsColumn("IDCLIENT", 1),
+          new XlsColumn("CLIENTLIBELLE", 1),
+          new XlsColumn("COMPTETITRE", 1),
+          new XlsColumn("COMPTESESPECES", 1),
+          new XlsColumn("ISIN", 1),
+          new XlsColumn("ISINDESCRIPTION", 1),
           new XlsColumn("QUANTITE", 1),
-          new XlsColumn("PRIX UNITAIRE", 1),
-          new XlsColumn("VALORISATION POSITION", 1),
-          new XlsColumn("NATURE POSITION", 1));
+          new XlsColumn("PRIXUNITAIRE", 1),
+          new XlsColumn("VALORISATIONPOSITION", 1),
+          new XlsColumn("NATUREPOSITION", 1));
 
   public static HSSFFont generateFont(
       HSSFWorkbook wb, short bold, short color, String fontName, short fontHeight) {

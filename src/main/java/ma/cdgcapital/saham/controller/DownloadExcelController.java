@@ -7,8 +7,10 @@ import ma.cdgcapital.saham.model.Operation;
 import ma.cdgcapital.saham.model.Position;
 import ma.cdgcapital.saham.repository.CompteTitreRepository;
 import ma.cdgcapital.saham.service.ExcelFileExporter;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -16,17 +18,18 @@ public class DownloadExcelController {
 
   private final CompteTitreRepository compteTitreRepository;
 
+  @Autowired
   public DownloadExcelController(CompteTitreRepository compteTitreRepository) {
     this.compteTitreRepository = compteTitreRepository;
   }
 
-  @GetMapping("/api/v1/comptes/titres/{numeroCompte}/portefeuille")
-  public List<Position> getPosition(@PathVariable String numeroCompte) {
+  @GetMapping("/position/{numeroCompte}")
+  public List<Position> getPosition(@RequestParam("numeroCompte") String numeroCompte) {
     return compteTitreRepository.getPositions(numeroCompte);
   }
 
-  @GetMapping("/api/v1/comptes/titres/{numeroCompte}")
-  public Compte getCompteTitre(@PathVariable String numeroCompte) {
+  @GetMapping("/positionClient/{numeroCompte}")
+  public Compte getCompteTitre(@RequestParam("numeroCompte") String numeroCompte) {
     return compteTitreRepository.getCompteTitre(numeroCompte);
   }
 
