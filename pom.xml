@@ -8,45 +8,54 @@
 		<version>2.7.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+
 	<groupId>ma.cdgcapital.saham</groupId>
 	<artifactId>CDG</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>CDG</name>
 	<description>Portail CLient CDG Capital</description>
+
 	<properties>
 		<java.version>1.8</java.version>
 		<spotless.version>2.21.0</spotless.version>
 	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi</artifactId>
-			<version>3.0-FINAL</version>
+			<version>3.8</version>
 		</dependency>
+
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-compress</artifactId>
             <version>1.21</version>
         </dependency>
+
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi-ooxml</artifactId>
 			<version>3.8</version>
 		</dependency>
+
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
+
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
 			<version>3.3.2</version>
 		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -91,7 +100,7 @@
 					<java>
 						<importOrder />
 						<googleJavaFormat>
-							<version>1.8</version>
+							<version>1.7</version>
 							<style>GOOGLE</style>
 						</googleJavaFormat>
 					</java>
@@ -109,35 +118,7 @@
 					</excludes>
 				</configuration>
 			</plugin>
-			<plugin>
-   <groupId>com.diffplug.spotless</groupId>
-   <artifactId>spotless-maven-plugin</artifactId>
-   <version>${spotless.version}</version>
-   <configuration>
-      <formats>
-         <format>
-            <includes>
-               <include>*.md</include>
-               <include>.gitignore</include>
-            </includes>
-            <trimTrailingWhitespace/>
-            <endWithNewline/>
-            <indent>
-               <tabs>true</tabs>
-               <spacesPerTab>4</spacesPerTab>
-            </indent>
-         </format>
-      </formats>
-      <java>
-         <importOrder />
-         <googleJavaFormat>
-            <version>1.8</version>
-            <style>GOOGLE</style>
-         </googleJavaFormat>
-      </java>
-   </configuration>
-</plugin>
-</plugins>
+	</plugins>
 </build>
 
 </project>

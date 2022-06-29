@@ -1,21 +1,26 @@
 package ma.cdgcapital.saham.service;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+import ma.cdgcapital.saham.model.Compte;
+import ma.cdgcapital.saham.model.Position;
 import ma.cdgcapital.saham.model.XlsColumn;
 import ma.cdgcapital.saham.model.provider.CompteTitreProvider;
 import ma.cdgcapital.saham.utils.CommonDate;
 import org.apache.commons.lang3.time.DateUtils;
 import org.apache.poi.hssf.usermodel.*;
 import org.apache.poi.hssf.util.Region;
+import org.apache.poi.ss.usermodel.IndexedColors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class ExcelFileExporter {
 
-  private final CompteTitreProvider compteTitreProvider;
+  private static CompteTitreProvider compteTitreProvider;
 
   @Autowired
   public ExcelFileExporter(CompteTitreProvider compteTitreProvider) {
@@ -68,6 +73,7 @@ public class ExcelFileExporter {
     cellStyle.setFont(font);
     cellStyle.setFillForegroundColor(background);
     cellStyle.setFillPattern(HSSFCellStyle.SOLID_FOREGROUND);
+    cellStyle.setVerticalAlignment(HSSFCellStyle.ALIGN_CENTER);
     return cellStyle;
   }
 
@@ -86,6 +92,7 @@ public class ExcelFileExporter {
       HSSFCell cell = row.createCell((short) colFrom);
       cell.setCellValue(cellValue);
       cell.setCellStyle(cellStyle);
+
     } else {
       int beginCell = colFrom;
       for (XlsColumn column : columns) {
@@ -103,13 +110,55 @@ public class ExcelFileExporter {
     }
   }
 
-  public String todayAmountTwo() {
+  public static String todayAmountTwo() {
     Date date = new Date();
     date = DateUtils.addDays(date, -2);
     return CommonDate.toStringFormat("dd/MM/yyyy", date);
   }
 
-  public static void generatePositionQuotidienneComptesTitres() {}
+  public static void generatePositionQuotidienneComptesTitres() throws IOException {
+
+    List<Position> positions = compteTitreProvider.getPositions("1410000199509");
+    Compte compte = compteTitreProvider.getCompteTitre("1410000199509");
+    HSSFWorkbook wb = new HSSFWorkbook();
+    HSSFSheet sheet = wb.createSheet("Feuil1");
+
+    HSSFFont fontTitle =
+        generateFont(
+            wb, HSSFFont.BOLDWEIGHT_BOLD, IndexedColors.WHITE.getIndex(), "Calibri", (short) 11);
+    createRow(
+        sheet,
+        null,
+        cellStyle(wb, fontTitle, IndexedColors.DARK_BLUE.index),
+        1,
+        1,
+        1,
+        1,
+        positionColumns);
+    sheet.setDisplayGridlines(false);
+    for (int i = 0; i < positionColumns.size(); i++) {
+      sheet.autoSizeColumn((short) i);
+    }
+
+    int rowNum = 2;
+    for (int i = 0; i < positions.size(); i++) {
+      sheet.autoSizeColumn((short) i);
+      HSSFRow row = sheet.createRow(rowNum++);
+      row.createCell((short) 1).setCellValue(todayAmountTwo());
+      row.createCell((short) 2).setCellValue(compte.getIdClientTitre());
+      row.createCell((short) 3).setCellValue(compte.getIntitule());
+      row.createCell((short) 4).setCellValue(positions.get(i).getNumeroCompte());
+      row.createCell((short) 5).setCellValue(compte.getNumeroCompteEspeceAttache());
+      row.createCell((short) 6).setCellValue(positions.get(i).getCodeIsin());
+      row.createCell((short) 7).setCellValue(positions.get(i).getDescriptionTitre());
+      row.createCell((short) 8).setCellValue(positions.get(i).getQuantite());
+      row.createCell((short) 11).setCellValue("Settled");
+    }
+
+    FileOutputStream out = new FileOutputStream("feuille 1.xls");
+    wb.write(out);
+    out.close();
+  }
 
   public static void generateReleveChronoOperationsTitres() {}
 }

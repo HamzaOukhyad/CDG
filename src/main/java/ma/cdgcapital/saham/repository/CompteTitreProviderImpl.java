@@ -2,6 +2,7 @@ package ma.cdgcapital.saham.repository;
 
 import java.util.List;
 import ma.cdgcapital.saham.model.Compte;
+import ma.cdgcapital.saham.model.Operation;
 import ma.cdgcapital.saham.model.Position;
 import ma.cdgcapital.saham.model.provider.CompteTitreProvider;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,13 +20,16 @@ public class CompteTitreProviderImpl implements CompteTitreProvider {
 
   @Override
   public List<Position> getPositions(String numeroCompte) {
-
     return comptetitrerepository.getPositions(numeroCompte);
   }
 
   @Override
   public Compte getCompteTitre(String numeroCompte) {
-
     return comptetitrerepository.getCompteTitre(numeroCompte);
+  }
+
+  @Override
+  public Operation getReleveChronologiques(String numeroCompte) {
+    return comptetitrerepository.getReleveChronologiques(numeroCompte);
   }
 }
