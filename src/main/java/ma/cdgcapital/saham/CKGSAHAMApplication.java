@@ -8,10 +8,8 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @EnableFeignClients
 public class CKGSAHAMApplication {
 
- 
   public static void main(String[] args) {
 
     SpringApplication.run(CKGSAHAMApplication.class, args);
-    
   }
 }

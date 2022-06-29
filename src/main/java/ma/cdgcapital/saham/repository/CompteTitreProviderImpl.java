@@ -20,19 +20,16 @@ public class CompteTitreProviderImpl implements CompteTitreProvider {
 
   @Override
   public List<Position> getPositions(String numeroCompte) {
-
     return comptetitrerepository.getPositions(numeroCompte);
   }
 
   @Override
   public Compte getCompteTitre(String numeroCompte) {
-
     return comptetitrerepository.getCompteTitre(numeroCompte);
   }
 
   @Override
   public Operation getReleveChronologiques(String numeroCompte) {
-	
-	return comptetitrerepository.getReleveChronologiques(numeroCompte);
-}
+    return comptetitrerepository.getReleveChronologiques(numeroCompte);
+  }
 }

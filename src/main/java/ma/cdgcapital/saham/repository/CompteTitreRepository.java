@@ -1,4 +1,3 @@
-
 package ma.cdgcapital.saham.repository;
 
 import java.util.List;
@@ -18,7 +17,7 @@ public interface CompteTitreRepository {
 
   @GetMapping(value = "/api/v1/comptes/titres/{numeroCompte}")
   Compte getCompteTitre(@PathVariable String numeroCompte);
-  
+
   @GetMapping(value = "api/v1/comptes/titres/{numeroCompte}/operations")
   Operation getReleveChronologiques(@PathVariable String numeroCompte);
 }
